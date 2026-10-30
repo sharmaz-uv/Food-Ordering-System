@@ -98,114 +98,27 @@ public class FoodFlowApp {
     static final String FILE_NAME = "foodflow.dat";
 
     public static void main(String[] args) {
-        loadData();
-
-        if (data.menu.isEmpty()) {
-            addSampleItems();
-            saveData();
-        }
-
-        while (true) {
-            System.out.println("\nFOODFLOW RESTAURANT SYSTEM");
-            System.out.println("1. View Food Menu");
-            System.out.println("2. Place an Order");
-            System.out.println("3. Track an Order");
-            System.out.println("4. Update Order Status");
-            System.out.println("5. Manage Food Items");
-            System.out.println("6. View Order History");
-            System.out.println("7. Sales Report");
-            System.out.println("8. Smart Meal Rescue");
-            System.out.println("9. Exit");
-
-            int choice = readInt("Enter your choice: ");
-
-            switch (choice) {
-                case 1:
-                    showMenu();
-                    break;
-                case 2:
-                    placeOrder();
-                    break;
-                case 3:
-                    trackOrder();
-                    break;
-                case 4:
-                    updateOrderStatus();
-                    break;
-                case 5:
-                    manageMenu();
-                    break;
-                case 6:
-                    orderHistory();
-                    break;
-                case 7:
-                    salesReport();
-                    break;
-                case 8:
-                    mealRescue();
-                    break;
-                case 9:
-                    saveData();
-                    System.out.println("Thank you for using FoodFlow!");
-                    return;
-                default:
-                    System.out.println("Invalid choice. Try again.");
-            }
-        }
+        
     }
 
     static int readInt(String message) {
-        while (true) {
-            System.out.print(message);
-            try {
-                return Integer.parseInt(sc.nextLine().trim());
-            } catch (NumberFormatException e) {
-                System.out.println("Enter a valid whole number.");
-            }
-        }
+        
     }
 
     static double readDouble(String message) {
-        while (true) {
-            System.out.print(message);
-            try {
-                double value = Double.parseDouble(sc.nextLine().trim());
-                if (Double.isFinite(value) && value >= 0) {
-                    return value;
-                }
-            } catch (NumberFormatException e) {
-                // Ask again for invalid input.
-            }
-            System.out.println("Enter a valid non-negative amount.");
-        }
+        
     }
 
     static String readText(String message) {
-        while (true) {
-            System.out.print(message);
-            String value = sc.nextLine().trim();
-            if (!value.isEmpty()) {
-                return value;
-            }
-            System.out.println("This field cannot be empty.");
-        }
+        
     }
 
     static void addSampleItems() {
-        data.menu.add(new FoodItem(1, "Paneer Biryani", "Main Course", 180, 10));
-        data.menu.add(new FoodItem(2, "Veg Burger", "Snacks", 100, 15));
-        data.menu.add(new FoodItem(3, "Cold Coffee", "Drinks", 90, 12));
-        data.menu.add(new FoodItem(4, "Masala Dosa", "Breakfast", 80, 10));
-        data.menu.add(new FoodItem(5, "Paneer Roll", "Snacks", 120, 5));
+        
     }
 
     static FoodItem findFood(int id) {
-        for (FoodItem food : data.menu) {
-            if (food.id == id) {
-                return food;
-            }
-        }
-        return null;
+        
     }
 
     static Order findOrder(int id) {
@@ -218,15 +131,7 @@ public class FoodFlowApp {
     }
 
     static void showMenu() {
-        System.out.println("\nFOOD MENU");
-        System.out.printf("%-5s %-22s %-15s %10s %8s%n",
-                "ID", "Name", "Category", "Price", "Stock");
-
-        for (FoodItem food : data.menu) {
-            System.out.printf("%-5d %-22s %-15s %10.2f %8d%n",
-                    food.id, food.name, food.category,
-                    food.price, food.stock);
-        }
+        
     }
 
     static void placeOrder() {
