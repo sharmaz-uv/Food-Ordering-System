@@ -152,6 +152,7 @@ public class FoodFlowApp {
                     System.out.println("Invalid choice. Try again.");
             }
         }
+        
     }
 
     static int readInt(String message) {
@@ -163,6 +164,7 @@ public class FoodFlowApp {
                 System.out.println("Enter a valid whole number.");
             }
         }
+        
     }
 
     static double readDouble(String message) {
@@ -178,6 +180,7 @@ public class FoodFlowApp {
             }
             System.out.println("Enter a valid non-negative amount.");
         }
+        
     }
 
     static String readText(String message) {
@@ -189,6 +192,7 @@ public class FoodFlowApp {
             }
             System.out.println("This field cannot be empty.");
         }
+        
     }
 
     static void addSampleItems() {
@@ -197,6 +201,7 @@ public class FoodFlowApp {
         data.menu.add(new FoodItem(3, "Cold Coffee", "Drinks", 90, 12));
         data.menu.add(new FoodItem(4, "Masala Dosa", "Breakfast", 80, 10));
         data.menu.add(new FoodItem(5, "Paneer Roll", "Snacks", 120, 5));
+        
     }
 
     static FoodItem findFood(int id) {
@@ -206,6 +211,7 @@ public class FoodFlowApp {
             }
         }
         return null;
+        
     }
 
     static Order findOrder(int id) {
@@ -227,6 +233,7 @@ public class FoodFlowApp {
                     food.id, food.name, food.category,
                     food.price, food.stock);
         }
+        
     }
 
     static void placeOrder() {
