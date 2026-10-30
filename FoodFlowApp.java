@@ -356,11 +356,57 @@ public class FoodFlowApp {
     }
 
     static void trackOrder() {
-        
+         int id = readInt("Enter your order ID: ");
+        Order order = findOrder(id);
+
+        if (order == null) {
+            System.out.println("Order not found.");
+        } else {
+            System.out.println("Order ID: " + order.id);
+            System.out.println("Customer: " + order.customer.name);
+            System.out.println("Placed on: " + order.date);
+            System.out.println("Current status: " + order.status);
+        }
+
     }
         
 
     static void updateOrderStatus() {
+        int id = readInt("Enter order ID: ");
+        Order order = findOrder(id);
+
+        if (order == null) {
+            System.out.println("Order not found.");
+            return;
+        }
+
+        System.out.println("1. PLACED");
+        System.out.println("2. PREPARING");
+        System.out.println("3. READY");
+        System.out.println("4. COMPLETED");
+
+        int choice = readInt("Select new status: ");
+
+        switch (choice) {
+            case 1:
+                order.status = "PLACED";
+                break;
+            case 2:
+                order.status = "PREPARING";
+                break;
+            case 3:
+                order.status = "READY";
+                break;
+            case 4:
+                order.status = "COMPLETED";
+                break;
+            default:
+                System.out.println("Invalid status.");
+                return;
+        }
+
+        saveData();
+        System.out.println("Order status updated.");
 
     }
         
@@ -433,6 +479,41 @@ public class FoodFlowApp {
     }
 
     static void orderHistory() {
+        int id = readInt("Enter order ID: ");
+        Order order = findOrder(id);
+
+        if (order == null) {
+            System.out.println("Order not found.");
+            return;
+        }
+
+        System.out.println("1. PLACED");
+        System.out.println("2. PREPARING");
+        System.out.println("3. READY");
+        System.out.println("4. COMPLETED");
+
+        int choice = readInt("Select new status: ");
+
+        switch (choice) {
+            case 1:
+                order.status = "PLACED";
+                break;
+            case 2:
+                order.status = "PREPARING";
+                break;
+            case 3:
+                order.status = "READY";
+                break;
+            case 4:
+                order.status = "COMPLETED";
+                break;
+            default:
+                System.out.println("Invalid status.");
+                return;
+        }
+
+        saveData();
+        System.out.println("Order status updated.");
 
     }
         
